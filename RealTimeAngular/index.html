@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Guage Test</title>
+    <script src="scripts/jquery-3.1.1.min.js"></script>
+    <script src="scripts/jquery.signalR-2.2.1.min.js"></script>
+    <script src="scripts/angular.min.js"></script>
+    <script src="signalr/hubs"></script>
+
+    <script src="ext-modules/psWebmetricsService/psWebMetricsService.js"></script>
+    <script src="ext-modules/psGuage/psGuageModule.js"></script>
+    <script src="ext-modules/psGuage/psGuageDirective.js"></script>
+    <script src="app/appModule.js"></script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['gauge'] });
+        google.charts.setOnLoadCallback(function () {
+            angular.bootstrap(document, ['app']);
+        });
+    </script>
+
+	<meta charset="utf-8" />
+</head>
+<body>
+    <h1>Guage Test</h1>
+    <ps-guage metric="cpuPct"></ps-guage>
+    <ps-guage metric="bandwidthPct"></ps-guage>
+</body>
+</html>
